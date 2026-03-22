@@ -176,6 +176,14 @@ body {
   background: url("assets/image.png");
   background-position: center;
   background-size: cover;
+  animation: photoFloat 4s ease-in-out infinite, photoGlow 3s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.profile-card:hover .card-photo {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(255, 109, 58, 0.35), inset 0 0 24px rgba(255, 109, 58, 0.12);
+  filter: brightness(1.08);
 }
 
 .profile-card h2 {
@@ -210,6 +218,27 @@ body {
   100% {
     transform: scale(1);
     box-shadow: 0 6px 14px rgba(255, 109, 58, 0.45);
+  }
+}
+
+@keyframes photoFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes photoGlow {
+  0% {
+    box-shadow: 0 0 0px rgba(255, 109, 58, 0), inset 0 0 0px rgba(255, 109, 58, 0);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(255, 109, 58, 0.25), inset 0 0 20px rgba(255, 109, 58, 0.08);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(255, 109, 58, 0), inset 0 0 0px rgba(255, 109, 58, 0);
   }
 }
 
